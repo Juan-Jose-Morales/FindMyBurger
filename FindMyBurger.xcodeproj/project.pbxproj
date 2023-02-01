@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		90ABD5402987D85B002FC43A /* HomeScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90ABD53F2987D85B002FC43A /* HomeScreenView.swift */; };
+		90ABD5432987EDD8002FC43A /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90ABD5422987EDD8002FC43A /* Category.swift */; };
+		90ABD54529880B56002FC43A /* Recomendado.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90ABD54429880B56002FC43A /* Recomendado.swift */; };
+		90ABD54729881024002FC43A /* Recomendado_items_view.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90ABD54629881024002FC43A /* Recomendado_items_view.swift */; };
+		90ABD54A2988205B002FC43A /* LandingPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90ABD5492988205B002FC43A /* LandingPage.swift */; };
+		90ABD54C29883EF5002FC43A /* CustomTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90ABD54B29883EF5002FC43A /* CustomTabBar.swift */; };
+		90ABD54E2989A10A002FC43A /* Components.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90ABD54D2989A10A002FC43A /* Components.swift */; };
 		90F367ED297AFF8300B10E70 /* FindMyBurgerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90F367EC297AFF8300B10E70 /* FindMyBurgerApp.swift */; };
 		90F367EF297AFF8300B10E70 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90F367EE297AFF8300B10E70 /* ContentView.swift */; };
 		90F367F1297AFF8500B10E70 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 90F367F0297AFF8500B10E70 /* Assets.xcassets */; };
@@ -14,6 +21,11 @@
 		90F367FE297AFF8600B10E70 /* FindMyBurgerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90F367FD297AFF8600B10E70 /* FindMyBurgerTests.swift */; };
 		90F36808297AFF8600B10E70 /* FindMyBurgerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90F36807297AFF8600B10E70 /* FindMyBurgerUITests.swift */; };
 		90F3680A297AFF8600B10E70 /* FindMyBurgerUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90F36809297AFF8600B10E70 /* FindMyBurgerUITestsLaunchTests.swift */; };
+		90F3681C297B0B4600B10E70 /* Khand-Semibold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 90F3681B297B0B4600B10E70 /* Khand-Semibold.ttf */; };
+		90F3681E297B0B7B00B10E70 /* Inter-VariableFont_slnt,wght.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 90F3681D297B0B7B00B10E70 /* Inter-VariableFont_slnt,wght.ttf */; };
+		90F36820297F3CD400B10E70 /* LoginScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90F3681F297F3CD400B10E70 /* LoginScreenView.swift */; };
+		90F36823297F44CF00B10E70 /* RegisterScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90F36822297F44CF00B10E70 /* RegisterScreenView.swift */; };
+		90F368252980281700B10E70 /* RecoverPass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90F368242980281700B10E70 /* RecoverPass.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +46,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		90ABD53F2987D85B002FC43A /* HomeScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenView.swift; sourceTree = "<group>"; };
+		90ABD5422987EDD8002FC43A /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
+		90ABD54429880B56002FC43A /* Recomendado.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recomendado.swift; sourceTree = "<group>"; };
+		90ABD54629881024002FC43A /* Recomendado_items_view.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recomendado_items_view.swift; sourceTree = "<group>"; };
+		90ABD5492988205B002FC43A /* LandingPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingPage.swift; sourceTree = "<group>"; };
+		90ABD54B29883EF5002FC43A /* CustomTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBar.swift; sourceTree = "<group>"; };
+		90ABD54D2989A10A002FC43A /* Components.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Components.swift; sourceTree = "<group>"; };
 		90F367E9297AFF8300B10E70 /* FindMyBurger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FindMyBurger.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		90F367EC297AFF8300B10E70 /* FindMyBurgerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindMyBurgerApp.swift; sourceTree = "<group>"; };
 		90F367EE297AFF8300B10E70 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -44,6 +63,12 @@
 		90F36803297AFF8600B10E70 /* FindMyBurgerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FindMyBurgerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		90F36807297AFF8600B10E70 /* FindMyBurgerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindMyBurgerUITests.swift; sourceTree = "<group>"; };
 		90F36809297AFF8600B10E70 /* FindMyBurgerUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindMyBurgerUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		90F3681A297B076100B10E70 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		90F3681B297B0B4600B10E70 /* Khand-Semibold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Khand-Semibold.ttf"; sourceTree = "<group>"; };
+		90F3681D297B0B7B00B10E70 /* Inter-VariableFont_slnt,wght.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Inter-VariableFont_slnt,wght.ttf"; path = "../../../../../Downloads/Inter/Inter-VariableFont_slnt,wght.ttf"; sourceTree = "<group>"; };
+		90F3681F297F3CD400B10E70 /* LoginScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginScreenView.swift; sourceTree = "<group>"; };
+		90F36822297F44CF00B10E70 /* RegisterScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterScreenView.swift; sourceTree = "<group>"; };
+		90F368242980281700B10E70 /* RecoverPass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecoverPass.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +96,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		90ABD5412987EDC0002FC43A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				90ABD5422987EDD8002FC43A /* Category.swift */,
+				90ABD54429880B56002FC43A /* Recomendado.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		90F367E0297AFF8300B10E70 = {
 			isa = PBXGroup;
 			children = (
@@ -94,8 +128,19 @@
 		90F367EB297AFF8300B10E70 /* FindMyBurger */ = {
 			isa = PBXGroup;
 			children = (
-				90F367EC297AFF8300B10E70 /* FindMyBurgerApp.swift */,
+				90ABD5412987EDC0002FC43A /* Model */,
+				90F3681A297B076100B10E70 /* Info.plist */,
+				90F36816297B040500B10E70 /* Fonts */,
+				90F3681F297F3CD400B10E70 /* LoginScreenView.swift */,
+				90F36822297F44CF00B10E70 /* RegisterScreenView.swift */,
+				90F368242980281700B10E70 /* RecoverPass.swift */,
+				90ABD53F2987D85B002FC43A /* HomeScreenView.swift */,
+				90ABD54D2989A10A002FC43A /* Components.swift */,
+				90ABD54629881024002FC43A /* Recomendado_items_view.swift */,
 				90F367EE297AFF8300B10E70 /* ContentView.swift */,
+				90F367EC297AFF8300B10E70 /* FindMyBurgerApp.swift */,
+				90ABD5492988205B002FC43A /* LandingPage.swift */,
+				90ABD54B29883EF5002FC43A /* CustomTabBar.swift */,
 				90F367F0297AFF8500B10E70 /* Assets.xcassets */,
 				90F367F2297AFF8500B10E70 /* Preview Content */,
 			);
@@ -125,6 +170,15 @@
 				90F36809297AFF8600B10E70 /* FindMyBurgerUITestsLaunchTests.swift */,
 			);
 			path = FindMyBurgerUITests;
+			sourceTree = "<group>";
+		};
+		90F36816297B040500B10E70 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				90F3681D297B0B7B00B10E70 /* Inter-VariableFont_slnt,wght.ttf */,
+				90F3681B297B0B4600B10E70 /* Khand-Semibold.ttf */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -231,6 +285,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				90F3681E297B0B7B00B10E70 /* Inter-VariableFont_slnt,wght.ttf in Resources */,
+				90F3681C297B0B4600B10E70 /* Khand-Semibold.ttf in Resources */,
 				90F367F4297AFF8500B10E70 /* Preview Assets.xcassets in Resources */,
 				90F367F1297AFF8500B10E70 /* Assets.xcassets in Resources */,
 			);
@@ -258,7 +314,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				90F367EF297AFF8300B10E70 /* ContentView.swift in Sources */,
+				90ABD54E2989A10A002FC43A /* Components.swift in Sources */,
+				90F368252980281700B10E70 /* RecoverPass.swift in Sources */,
+				90F36820297F3CD400B10E70 /* LoginScreenView.swift in Sources */,
+				90ABD54C29883EF5002FC43A /* CustomTabBar.swift in Sources */,
+				90ABD5402987D85B002FC43A /* HomeScreenView.swift in Sources */,
 				90F367ED297AFF8300B10E70 /* FindMyBurgerApp.swift in Sources */,
+				90ABD54529880B56002FC43A /* Recomendado.swift in Sources */,
+				90ABD54A2988205B002FC43A /* LandingPage.swift in Sources */,
+				90F36823297F44CF00B10E70 /* RegisterScreenView.swift in Sources */,
+				90ABD5432987EDD8002FC43A /* Category.swift in Sources */,
+				90ABD54729881024002FC43A /* Recomendado_items_view.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -417,8 +483,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"FindMyBurger/Preview Content\"";
+				DEVELOPMENT_TEAM = H8ZVN55RGH;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = FindMyBurger/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -445,8 +513,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"FindMyBurger/Preview Content\"";
+				DEVELOPMENT_TEAM = H8ZVN55RGH;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = FindMyBurger/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
