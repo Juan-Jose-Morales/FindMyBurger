@@ -17,9 +17,11 @@ struct RegisterScreenView: View {
     @State var pass2 = ""
     @State var visible = false
     @State private var shouldShowLogin: Bool = false
-    @State private var shouldShowAgenda: Bool = false
+    @State private var shouldShowHome: Bool = false
     @State private var shouldShowError: Bool = false
     @State var textalert = ""
+    @Environment(\.presentationMode)
+    var mode: Binding<PresentationMode>
     var body: some View{
         
         ZStack {
@@ -101,12 +103,12 @@ struct RegisterScreenView: View {
                     }){
                         Text("Ya tienes una cuenta? ")
                             .padding(.top, 25)
-                            .foregroundColor(.indigo)
+                            .foregroundColor(.black)
                         
                         
                         Text("Inicia Sesion")
                             .fontWeight(.bold)
-                            .foregroundColor(.indigo)
+                            .foregroundColor(.orange)
                             .padding(.top, 25)
                         
                     }.background(
@@ -115,6 +117,7 @@ struct RegisterScreenView: View {
                         }
                     )
                 }
+                .padding(.horizontal,50)
                 
                 }
             .padding(.horizontal, 25)
@@ -122,11 +125,69 @@ struct RegisterScreenView: View {
         
            
         }
+    func onSuccess() {
+        shouldShowHome = true
+        mode.wrappedValue.dismiss()
+    }
+    
+    func onError(error: String) {
+        print(error)
+        shouldShowError = true
+        textalert = "Error al crear nuevo usuario"
+
+    }
     
         }
         
 struct RegisterScreenView_Previews: PreviewProvider {
     static var previews: some View {
         RegisterScreenView()
+    }
+}
+
+extension RegisterScreenView {
+    
+    func RegisterButton(title: String) -> some View {
+        Button {
+            if email.isEmpty || pass.isEmpty || pass2.isEmpty || name.isEmpty{
+                shouldShowError = true
+                textalert = "Rellena todos los campos"
+                
+            } else if pass != pass2{
+                
+                shouldShowError = true
+                textalert = "Las contraseñas deben coincidir"
+            }
+            
+            else{
+                //register(email: email, pass: pass)
+            }
+            
+        } label: {
+            Text(title)
+                .foregroundColor(.white)
+                .padding(.vertical)
+                .frame(width: UIScreen.main.bounds.width - 50)
+                .background(Color("Color"))
+                .cornerRadius(10)
+                .padding(.top,20)
+            
+        }
+        //realizamos la navegacion hacia el destino que queremos y le pasamos la comprobacion creada en la aprte superior
+        .background(
+            NavigationLink(destination: HomeScreenView(), isActive: $shouldShowHome) {
+                EmptyView()
+            }
+        )
+        .alert("Error al registrarte", isPresented: $shouldShowError, actions: {
+            
+            Button{
+                
+            } label: {
+                Text("Ok")
+            }
+        }){
+            Text(textalert)
+        }
     }
 }
