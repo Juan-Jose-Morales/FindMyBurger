@@ -9,7 +9,7 @@ import SwiftUI
 
 struct BackgroundColorView: View {
     var body: some View {
-        Color.white.ignoresSafeArea()
+        Color("Fondo").ignoresSafeArea()
         
     }
 }

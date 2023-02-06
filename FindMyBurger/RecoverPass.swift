@@ -39,7 +39,7 @@ struct RecoverPass: View {
                                 .frame(width: UIScreen.main.bounds.width - 90)
                                
                         }
-                        .background(Color("Verde"))
+                        .background(Color("Amarillo"))
                         .cornerRadius(25)
                         .padding(.top,20)
                         .padding(.horizontal,20)

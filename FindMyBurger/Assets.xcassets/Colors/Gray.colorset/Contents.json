@@ -14,10 +14,6 @@
           "value" : "light"
         }
       ],
-      "color" : {
-        "platform" : "ios",
-        "reference" : "systemGray3Color"
-      },
       "idiom" : "universal"
     },
     {
@@ -28,12 +24,12 @@
         }
       ],
       "color" : {
-        "color-space" : "srgb",
+        "color-space" : "display-p3",
         "components" : {
           "alpha" : "1.000",
-          "blue" : "1.000",
-          "green" : "1.000",
-          "red" : "1.000"
+          "blue" : "0.277",
+          "green" : "0.269",
+          "red" : "0.266"
         }
       },
       "idiom" : "universal"

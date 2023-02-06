@@ -36,14 +36,14 @@ struct RegisterScreenView: View {
                         .background(RoundedRectangle(cornerRadius: 25).stroke(self.email != "" ? Color("Black") : self.gray,lineWidth: 2))
                         .font(.custom("Inter-VariableFont_slnt,wght", size: 20))
                         
-                    Spacer()
+                    
                     TextField("Nombre", text: self.$name)
                         .foregroundColor(color)
                         .padding()
                         .background(RoundedRectangle(cornerRadius: 25).stroke(self.email != "" ? Color("Black") : self.gray,lineWidth: 2))
                         .font(.custom("Inter-VariableFont_slnt,wght", size: 20))
                         .padding(.bottom,20)
-                        .padding(.top,20)
+                        .padding(.top,40)
                 }
                 
                 HStack (spacing: 10){
@@ -56,7 +56,7 @@ struct RegisterScreenView: View {
                 .padding()
                 .background(RoundedRectangle(cornerRadius: 25).stroke(self.email != "" ? Color("Black") : self.gray,lineWidth: 2))
                 .padding(.top, 20)
-                .padding(.bottom,30)
+                .padding(.bottom,20)
                 HStack (spacing: 10){
                     VStack{
                         
@@ -84,7 +84,7 @@ struct RegisterScreenView: View {
                             .frame(width: UIScreen.main.bounds.width - 90)
                         
                     }
-                    .background(Color("Verde"))
+                    .background(Color("Amarillo"))
                     .cornerRadius(25)
                     .padding(.top,20)
                     .padding(.bottom,20)
@@ -100,17 +100,17 @@ struct RegisterScreenView: View {
                             .padding(.top, 10)
                             .foregroundColor(.black)
                             
-                        
+                            
                         
                         Text("Inicia Sesion")
                             .fontWeight(.bold)
-                            .foregroundColor(Color("Verde"))
+                            .foregroundColor(Color("Amarillo"))
                             .padding(.top, 10)
-                            .padding(.horizontal,15)
+                            
                     }
                 }
                 
-                .padding(.horizontal,20)
+                .padding(.horizontal,60)
                 }
                 
             }

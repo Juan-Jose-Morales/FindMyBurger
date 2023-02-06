@@ -10,79 +10,31 @@ import SwiftUI
 struct LandingPage: View {
     @State var searchText = ""
     @Binding var selectedCategory: Category
+    var imageNames: [String] = ["1","2","3","4"]
     
     var body: some View {
         
         ZStack{
-            
             BackgroundColorView()
-            VStack{
-                
-                HStack{
-                    
-                    Button(action: {} , label: {
-                        
-                        Image("Logo2")
-                            .resizable()
-                            .aspectRatio( contentMode: .fit)
-                            .frame(width: 40,height: 40)
-                            .padding(6)
-                        
-                            .cornerRadius(8)
-                        
-                    })
-                    
-                    Spacer()
-                    Button(action: {} , label: {
-                        
-                        Image("configuracion")
-                            .resizable()
-                            .aspectRatio( contentMode: .fit)
-                            .frame(width: 20,height: 20)
-                            .padding(10)
-                            .cornerRadius(8)
-                    })
-                    
-                    
-                }
-                .padding()
-                
-                
-                HStack{
-                    TextField("Buscar restaurantes",text: $searchText )
-                        .padding(.leading , 24)
-                        .padding()
-                        .background(Color("Gray"))
-                        .cornerRadius(10)
-                    
-                }
+            
+            VStack {
+               navBar
                 .padding(.horizontal)
-                .overlay(
-                    HStack {
-                        Image(systemName: "magnifyingglass")
-                        Spacer()
-                        Image("filtro")
-                            .resizable()
-                            .frame(width: 20, height: 20)
-                    }.padding(.horizontal, 32)
-                        .foregroundColor(.gray)
+                .padding(.bottom, 10)
+                
+                searchView
+                
+                ScrollView(.vertical, showsIndicators: false,content: {
+                    tabView
+                        .padding(.top, 10)
                     
-                )
-                
-                
-                
-                ScrollView(.vertical,showsIndicators: false,content: {
-                    Spacer()
                     VStack(alignment: .leading , spacing: 15){
-                        
-                        
-                        
-                        
                         Text("Categorias")
                             .font(.title)
                             .fontWeight(.bold)
                             .padding(.horizontal)
                             .padding(.bottom)
+                            .foregroundColor(Color("Black"))
                         
                         ScrollView(.horizontal, showsIndicators:  false, content: {
                             
@@ -128,6 +80,7 @@ struct LandingPage: View {
                                 .font(.title2)
                                 .fontWeight(.bold)
                                 .padding()
+                                .foregroundColor(Color("Black"))
                             
                             Spacer()
                             
@@ -153,7 +106,8 @@ struct LandingPage: View {
                                 
                             })
                         }
-                        .padding()
+                        .padding(.top,10)
+                        .padding(.horizontal,10)
                         
                         
                         ScrollView(.horizontal, showsIndicators: false, content: {
@@ -172,13 +126,121 @@ struct LandingPage: View {
                         })
                     }
                     .padding(.vertical)
+                    
+                    HStack{
+                        
+                        Text("Agregado recientemente")
+                            .font(.title2)
+                            .fontWeight(.bold)
+                            .padding()
+                            .foregroundColor(Color("Black"))
+                        
+                        Spacer()
+                        
+                        Button(action: {}, label:{
+                            
+                            HStack( spacing: 6){
+                                
+                                Image(systemName: "chevron.right")
+                                    .font(.footnote)
+                                    .foregroundColor(.white)
+                                    .padding(.vertical, 4)
+                                    .padding(.horizontal, 6)
+                                    .background(Color("Naranja"))
+                                    .cornerRadius(5)
+                                
+                            }
+                            
+                        })
+                    }
+                    .padding(.top,10)
+                    .padding(.horizontal,10)
+                    
+                    
+                    
+                    ScrollView(.horizontal, showsIndicators: false, content: {
+                        
+                        HStack (spacing: 25){
+                            
+                            ForEach(recomendado_items){ item in
+                                
+                                Recomendado_items_view(item: item)
+                            }
+                        }
+                        
+                        .padding(.leading)
+                        
+                        
+                    })
+                    
                 })
                 
             }
             .background(Color.black.opacity(0.03).ignoresSafeArea())
         }
     }
+    
+    
+    // MARK: - Accessory Views
+    
+    private var searchView: some View {
+        HStack{
+            TextField("Buscar restaurantes",text: $searchText)
+                .frame(height: 50)
+                .padding(.leading, 44)
+                .foregroundColor(Color("Texto"))
+                .background(Color("Gray"))
+                .cornerRadius(10)
+        }
+        .padding(.horizontal)
+        .overlay(
+            HStack {
+                Image(systemName: "magnifyingglass")
+                Spacer()
+                Image("filtro")
+                    .resizable()
+                    .frame(width: 20, height: 20)
+            }
+                .padding(.horizontal, 32)
+                .foregroundColor(.gray)
+        )
+    }
+    
+    private var navBar: some View {
+        HStack {
+            Image("Logo2")
+                .resizable()
+                .frame(width: 45, height: 35)
+        
+            Spacer()
+            
+            Button(action: {
+                // TODO: - config action
+            } , label: {
+                Image("configuracion")
+                    .resizable()
+                    .frame(width: 20,height: 20)
+            })
+        }
+    }
+
+    private var tabView: some View {
+        TabView {
+            ForEach (imageNames, id:\.self ){ imageNames in
+                Image(imageNames)
+                    .resizable()
+                    .cornerRadius(10)
+                    .padding(.horizontal)
+                    .frame(maxWidth: .infinity)
+                    .frame(height: 250)
+            }
+        }
+        .tabViewStyle(PageTabViewStyle())
+        .frame(height: 250)
+    }
 }
+
+
 struct LandingPage_Previews: PreviewProvider {
     static var previews: some View {
         LandingPage(selectedCategory: .constant(Category(image: "Ternera", title: "Burguer")))

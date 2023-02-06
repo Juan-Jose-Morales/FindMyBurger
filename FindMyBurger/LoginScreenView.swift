@@ -8,139 +8,148 @@
 import SwiftUI
 
 struct LoginScreenView: View {
-    @State var color = Color.black.opacity(0.7)
-    @State var gray = Color("Gray")
     @State var email = ""
     @State var pass = ""
     @State var visible = false
+    
     var body: some View {
         ZStack {
-            Color.white.ignoresSafeArea()
-            VStack{
+            BackgroundColorView()
+            
+            VStack(spacing: 0){
                 Image("Logo2")
-                    .fixedSize()
+                    .resizable()
+                    .frame(width: 115, height: 90)
+                    .padding(.bottom, 5)
+            
                 Text("LOGIN")
                     .font(.custom("Khand-Semibold", size: 48))
-                    .padding(.bottom,10)
-                VStack{
-                    TextField("Nombre", text: self.$email)
-                        .foregroundColor(color)
-                        .padding()
-                        .background(RoundedRectangle(cornerRadius: 25).stroke(self.email != "" ? Color("Black") : self.gray,lineWidth: 2))
-                        .font(.custom("Inter-VariableFont_slnt,wght", size: 20))
-                        .padding(.bottom,15)
-                    
-                }
+                    .padding(.bottom, 15)
                 
-                HStack (spacing: 10){
-                    VStack{
-                        if self.visible{
-                            TextField("Contraseña", text: self.$pass)
-                               
-                        }else{
-                            SecureField("Contraseña", text: self.$pass)
-                                .foregroundColor(color)
-                                .font(.custom("Inter-VariableFont_slnt,wght", size: 20))
-                        }
+                
+                TextField("Nombre", text: self.$email)
+                    .font(.custom("Inter-VariableFont_slnt,wght", size: 20))
+                    .foregroundColor(placeholederColor)
+                    .frame(height: 55)
+                    .padding(.horizontal, 18)
+                    .background(RoundedRectangle(cornerRadius: 25).stroke(self.email != "" ? Color("Black") : strokeLineTF, lineWidth: 2))
+                    .padding(.bottom, 15)
+                
+                
+                Group {
+                    if self.visible{
+                        TextField("Contraseña", text: self.$pass)
+                        
+                    }else{
+                        SecureField("Contraseña", text: self.$pass)
+                            .foregroundColor(placeholederColor)
+                            .font(.custom("Inter-VariableFont_slnt,wght", size: 20))
+                            .overlay(alignment: .trailing) {
+                                Button(action: {
+                                    // TODO: - Eye visible action
+                                }, label: {
+                                    Image(systemName: self.visible ? "eye.slash.fill" : "eye.fill")
+                                        .foregroundColor(placeholederColor)
+                                })
+                            }
                             
                         
-                    }
-                    Button(action: {
                         
-                    }) {
-                        Image(systemName: self.visible ? "eye.slash.fill" : "eye.fill")
-                            .foregroundColor(self.color)
                     }
-                    
                 }
-                .padding()
-                .background(RoundedRectangle(cornerRadius: 25).stroke(self.email != "" ? Color("Black") : self.gray,lineWidth: 2))
-                .padding(.top, 30)
-                
+                .font(.custom("Inter-VariableFont_slnt,wght", size: 20))
+                .foregroundColor(placeholederColor)
+                .frame(height: 55)
+                .padding(.horizontal, 18)
+                .background(RoundedRectangle(cornerRadius: 25).stroke(self.email != "" ? Color("Black") : strokeLineTF, lineWidth: 2))
+                .padding(.bottom, 15)
+
                 HStack{
-                    Spacer()
                     Button(action: {
-                        
+                        // TODO: -
                     }){
                         Text("Has olvidado tu contraseña?")
                             .fontWeight(.bold)
-                            .foregroundColor(color)
-                      
+                            .foregroundColor(placeholederColor)
                     }
                     
+                    Spacer()
                 }
-                .padding(.leading,10)
-                .padding(.top ,30)
-                HStack{
-                    Button(action: {
-                        
-                        
-                    }){
+                .padding(.horizontal, 18)
+                .padding(.bottom, 45)
+                
+                
+                Button {
+                    // TODO: - Login
+                } label: {
+                    HStack {
                         Text("Iniciar Sesion")
                             .foregroundColor(.white)
                             .padding(.vertical)
-                            .frame(width: UIScreen.main.bounds.width - 90)
-                        
                     }
-                    .background(Color("Verde"))
-                    .cornerRadius(25)
-                    .padding(.top,20)
-                    
+                    .padding(.horizontal, 15)
                 }
-                HStack{
-                    Spacer()
-                    Button(action: {
+                .frame(height: 50)
+                .frame(maxWidth: .infinity)
+                .background(Color("Amarillo"))
+                .cornerRadius(25)
+                .padding(.bottom, 10)
+                
+                
+                Button {
+                    // TODO: - Google Login
+                } label: {
+                    HStack {
+                        Image("google")
+                            .resizable()
+                            .frame(width: 24, height: 24)
                         
+                        Spacer()
                         
-                    }){
                         Text("Iniciar Sesion con Google")
                             .foregroundColor(.white)
-                            .padding(.vertical)
-                            
-                            .frame(width: UIScreen.main.bounds.width - 90)
-                        
-                        
+                        Spacer()
                     }
-                    .background(Color("Gray"))
-                    .cornerRadius(25)
-                    .padding(.top,20)
-                    .padding(.horizontal,20)
-                  
-            
-                    }
-                HStack{
-                    Spacer()
+                    .padding(.horizontal, 15)
+                }
+                .frame(height: 50)
+                .background(Color("Gray"))
+                .cornerRadius(25)
+                .padding(.bottom, 25)
+
+                Button(action: {
                     
-                    Button(action: {
-                        
-                    }){
+                }){
+                    HStack {
                         Text("Aun no tienes una cuenta? ")
-                            .padding(.top, 25)
                             .foregroundColor(.black)
-                            
-                        
                         
                         Text("Registrate")
                             .fontWeight(.bold)
-                            .foregroundColor(Color("Verde"))
-                            .padding(.top, 25)
-                            .padding(.horizontal,2)
-                            
-                        
+                            .foregroundColor(Color("Amarillo"))
+                            .padding(.horizontal, 2)
                     }
                 }
-                .padding(.horizontal,20)
-                }
-                
             }
-            .padding(.horizontal, 25)
-        }
             
         }
+        .padding(.horizontal, 25)
+    }
     
+    // MARK: - Accessory Views
+    
+    var placeholederColor: Color {
+        Color.black.opacity(0.7)
+    }
+    
+    var strokeLineTF: Color {
+        Color("Gray")
+    }
+}
 
 
- 
+
+
 
 struct LoginScreenView_Previews: PreviewProvider {
     static var previews: some View {
