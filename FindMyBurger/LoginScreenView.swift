@@ -11,7 +11,10 @@ struct LoginScreenView: View {
     @State var email = ""
     @State var pass = ""
     @State var visible = false
-    
+    @State private var shouldShowRegister: Bool = false
+    @State private var shouldShowAgenda: Bool = false
+    @State private var shouldShowError: Bool = false
+    @State var textalert = ""
     var body: some View {
         ZStack {
             BackgroundColorView()
@@ -36,34 +39,34 @@ struct LoginScreenView: View {
                     .padding(.bottom, 15)
                 
                 
-                Group {
+               
+                HStack (spacing: 15){
+                    
+                    //Funcion en la cual se comprueba si es visible o no la contraseña , si es visible se le pasa un texfiel si no se le pasa un securityfield
                     if self.visible{
-                        TextField("Contraseña", text: self.$pass)
+                        TextField("Password", text: self.$pass)
                         
                     }else{
-                        SecureField("Contraseña", text: self.$pass)
-                            .foregroundColor(placeholederColor)
-                            .font(.custom("Inter-VariableFont_slnt,wght", size: 20))
-                            .overlay(alignment: .trailing) {
-                                Button(action: {
-                                    // TODO: - Eye visible action
-                                }, label: {
-                                    Image(systemName: self.visible ? "eye.slash.fill" : "eye.fill")
-                                        .foregroundColor(placeholederColor)
-                                })
-                            }
-                            
-                        
-                        
+                        SecureField("Password", text: self.$pass)
+                            .foregroundColor(Color("Black"))
                     }
+                    
+                    Button(action: {
+                        self.visible.toggle()
+                    }) {
+                        Image(systemName: self.visible ? "eye.slash.fill" : "eye.fill")
+                            .foregroundColor((self.visible == true) ? Color.orange : Color.secondary)
+                    }
+                    
                 }
-                .font(.custom("Inter-VariableFont_slnt,wght", size: 20))
-                .foregroundColor(placeholederColor)
-                .frame(height: 55)
-                .padding(.horizontal, 18)
-                .background(RoundedRectangle(cornerRadius: 25).stroke(self.email != "" ? Color("Black") : strokeLineTF, lineWidth: 2))
-                .padding(.bottom, 15)
-
+                    
+                    .font(.custom("Inter-VariableFont_slnt,wght", size: 20))
+                    .foregroundColor(placeholederColor)
+                    .frame(height: 55)
+                    .padding(.horizontal, 18)
+                    .background(RoundedRectangle(cornerRadius: 25).stroke(self.pass != "" ? Color("Black") : strokeLineTF, lineWidth: 2))
+                    .padding(.bottom, 15)
+                
                 HStack{
                     Button(action: {
                         // TODO: -
@@ -115,20 +118,37 @@ struct LoginScreenView: View {
                 .frame(height: 50)
                 .background(Color("Gray"))
                 .cornerRadius(25)
-                .padding(.bottom, 25)
+                .padding(.bottom, 5)
 
                 Button(action: {
                     
                 }){
                     HStack {
                         Text("Aun no tienes una cuenta? ")
+                            .padding(.top, 25)
                             .foregroundColor(.black)
+                            
+                        Spacer()
                         
-                        Text("Registrate")
-                            .fontWeight(.bold)
-                            .foregroundColor(Color("Amarillo"))
-                            .padding(.horizontal, 2)
+                        Button(action: {
+                            shouldShowRegister = true
+                        }){
+                            Text("Registrate")
+                                .fontWeight(.bold)
+                                .foregroundColor(.orange)
+                                .padding(.top, 25)
+                                
+                            
+                        }.background(
+                            NavigationLink(destination: RegisterScreenView(), isActive: $shouldShowRegister) {
+                                EmptyView()
+                            }
+                        )
+                        
+                       
                     }
+                    .padding(.horizontal,15)
+                    
                 }
             }
             
@@ -145,6 +165,19 @@ struct LoginScreenView: View {
     var strokeLineTF: Color {
         Color("Gray")
     }
+    
+    func onSuccess() {
+        
+        shouldShowAgenda = true
+    }
+    
+    func onError(error: String) {
+        print(error)
+        shouldShowError = true
+        textalert = "No existe este usuario"
+        
+        
+    }
 }
 
 
@@ -154,5 +187,46 @@ struct LoginScreenView: View {
 struct LoginScreenView_Previews: PreviewProvider {
     static var previews: some View {
         LoginScreenView()
+    }
+}
+
+extension LoginScreenView {
+    
+    
+    func loginButton(title: String) -> some View {
+        Button {
+            if email.isEmpty || pass.isEmpty{
+                shouldShowError = true
+                textalert = "Fields are empty"
+            }else{
+                //login(email: email, pass: pass)
+            }
+            
+        } label: {
+            Text(title)
+                .foregroundColor(.white)
+                .padding(.vertical)
+                .frame(width: UIScreen.main.bounds.width - 50)
+                .padding(.horizontal, 2)
+                .background(Color("Color"))
+                .cornerRadius(10)
+                .padding(.top,25)
+            
+        }
+        .background(
+            NavigationLink(destination: HomeScreenView(), isActive: $shouldShowAgenda) {
+                EmptyView()
+            }
+        )
+        .alert("Error al logearse", isPresented: $shouldShowError, actions: {
+            
+            Button{
+                
+            } label: {
+                Text("Ok")
+            }
+        }){
+            Text(textalert)
+        }
     }
 }

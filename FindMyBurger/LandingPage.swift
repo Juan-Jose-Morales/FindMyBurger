@@ -190,7 +190,7 @@ struct LandingPage: View {
                 .padding(.leading, 44)
                 .foregroundColor(Color("Texto"))
                 .background(Color("Gray"))
-                .cornerRadius(10)
+                .cornerRadius(20)
         }
         .padding(.horizontal)
         .overlay(

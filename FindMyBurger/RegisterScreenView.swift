@@ -16,14 +16,16 @@ struct RegisterScreenView: View {
     @State var pass = ""
     @State var pass2 = ""
     @State var visible = false
+    @State private var shouldShowLogin: Bool = false
+    @State private var shouldShowAgenda: Bool = false
+    @State private var shouldShowError: Bool = false
+    @State var textalert = ""
     var body: some View{
         
         ZStack {
             Color.white.ignoresSafeArea()
             VStack{
-                
-                Image("Logo2")
-                    .fixedSize()
+                Logo2()
                 Text("Registro")
                     .font(.custom("Khand-Semibold", size: 48))
                     .padding(.bottom,10)
@@ -71,7 +73,7 @@ struct RegisterScreenView: View {
                 .padding(.top, 20)
                 .padding(.bottom,30)
 
-                HStack{
+               
                     
                     Button(action: {
                         
@@ -84,38 +86,41 @@ struct RegisterScreenView: View {
                             .frame(width: UIScreen.main.bounds.width - 90)
                         
                     }
+                    .padding(.horizontal, 25)
                     .background(Color("Amarillo"))
                     .cornerRadius(25)
                     .padding(.top,20)
                     .padding(.bottom,20)
-                }
+                
              
                 HStack{
                     Spacer()
-                    
+                    //Boton para redirijir a iniciar sesion
                     Button(action: {
-                        
+                        shouldShowLogin = true
                     }){
-                        Text("Ya tienes cuenta? ")
-                            .padding(.top, 10)
-                            .foregroundColor(.black)
-                            
-                            
+                        Text("Ya tienes una cuenta? ")
+                            .padding(.top, 25)
+                            .foregroundColor(.indigo)
+                        
                         
                         Text("Inicia Sesion")
                             .fontWeight(.bold)
-                            .foregroundColor(Color("Amarillo"))
-                            .padding(.top, 10)
-                            
-                    }
+                            .foregroundColor(.indigo)
+                            .padding(.top, 25)
+                        
+                    }.background(
+                        NavigationLink(destination: LoginScreenView(), isActive: $shouldShowLogin) {
+                            EmptyView()
+                        }
+                    )
                 }
                 
-                .padding(.horizontal,60)
                 }
-                
+            .padding(.horizontal, 25)
             }
         
-            .padding(.horizontal, 25)
+           
         }
     
         }

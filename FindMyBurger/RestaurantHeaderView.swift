@@ -15,7 +15,7 @@ struct RestaurantHeaderView: View {
         
         VStack(alignment: .leading, spacing: 10){
             
-        HStack(spacing:0){
+            HStack(spacing: 0){
             Button(action: {}, label: {
                 
                 Image(systemName: "arrow.left")
@@ -26,6 +26,21 @@ struct RestaurantHeaderView: View {
             Text("Restaurante X")
                 .font(.title)
                 .fontWeight(.bold)
+            
+            Spacer()
+            
+                Button (action: {}, label: {
+                    
+                    Image("heart2")
+                        .resizable()
+                        .frame(width: 32,height: 32)
+                        .padding(.top)
+                })
+                   
+                
+            
+            
+                
         }
         
             ZStack{
@@ -35,6 +50,7 @@ struct RestaurantHeaderView: View {
                     Text("Av llaod")
                         .fontWeight(.semibold)
                         
+                    
                     
                     
                     HStack (spacing: 8){
@@ -99,8 +115,8 @@ struct RestaurantHeaderView: View {
             }
             
         }
-        .padding(.horizontal)
-        .frame(height: 100)
+        .padding(.horizontal,20)
+        .frame(height: 130)
         .background(Color.white)
         
     }

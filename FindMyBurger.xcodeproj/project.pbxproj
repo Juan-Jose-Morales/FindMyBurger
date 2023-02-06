@@ -21,6 +21,9 @@
 		90ABD55B29910988002FC43A /* Tab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90ABD55A29910988002FC43A /* Tab.swift */; };
 		90ABD55D29910F23002FC43A /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90ABD55C29910F23002FC43A /* HomeViewModel.swift */; };
 		90ABD55F29910F3F002FC43A /* RestaurantViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90ABD55E29910F3F002FC43A /* RestaurantViewModel.swift */; };
+		90ABD56129915FB5002FC43A /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90ABD56029915FB5002FC43A /* ProfileView.swift */; };
+		90ABD56329915FD9002FC43A /* FavoritesBurgerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90ABD56229915FD9002FC43A /* FavoritesBurgerView.swift */; };
+		90ABD56529915FFD002FC43A /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90ABD56429915FFD002FC43A /* MapView.swift */; };
 		90F367ED297AFF8300B10E70 /* FindMyBurgerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90F367EC297AFF8300B10E70 /* FindMyBurgerApp.swift */; };
 		90F367EF297AFF8300B10E70 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90F367EE297AFF8300B10E70 /* ContentView.swift */; };
 		90F367F1297AFF8500B10E70 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 90F367F0297AFF8500B10E70 /* Assets.xcassets */; };
@@ -67,6 +70,9 @@
 		90ABD55A29910988002FC43A /* Tab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tab.swift; sourceTree = "<group>"; };
 		90ABD55C29910F23002FC43A /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		90ABD55E29910F3F002FC43A /* RestaurantViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantViewModel.swift; sourceTree = "<group>"; };
+		90ABD56029915FB5002FC43A /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		90ABD56229915FD9002FC43A /* FavoritesBurgerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesBurgerView.swift; sourceTree = "<group>"; };
+		90ABD56429915FFD002FC43A /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		90F367E9297AFF8300B10E70 /* FindMyBurger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FindMyBurger.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		90F367EC297AFF8300B10E70 /* FindMyBurgerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindMyBurgerApp.swift; sourceTree = "<group>"; };
 		90F367EE297AFF8300B10E70 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -170,6 +176,9 @@
 				90ABD54F2990FA45002FC43A /* RestaurantView.swift */,
 				90ABD558299106CA002FC43A /* RestaurantHeaderView.swift */,
 				90ABD55429910193002FC43A /* RestaurantCardView.swift */,
+				90ABD56029915FB5002FC43A /* ProfileView.swift */,
+				90ABD56229915FD9002FC43A /* FavoritesBurgerView.swift */,
+				90ABD56429915FFD002FC43A /* MapView.swift */,
 				90F367F0297AFF8500B10E70 /* Assets.xcassets */,
 				90F367F2297AFF8500B10E70 /* Preview Content */,
 			);
@@ -345,6 +354,7 @@
 				90F367EF297AFF8300B10E70 /* ContentView.swift in Sources */,
 				90ABD55D29910F23002FC43A /* HomeViewModel.swift in Sources */,
 				90ABD55B29910988002FC43A /* Tab.swift in Sources */,
+				90ABD56529915FFD002FC43A /* MapView.swift in Sources */,
 				90ABD54E2989A10A002FC43A /* Components.swift in Sources */,
 				90ABD559299106CA002FC43A /* RestaurantHeaderView.swift in Sources */,
 				90F368252980281700B10E70 /* RecoverPass.swift in Sources */,
@@ -354,10 +364,12 @@
 				90ABD54C29883EF5002FC43A /* CustomTabBar.swift in Sources */,
 				90ABD5402987D85B002FC43A /* HomeScreenView.swift in Sources */,
 				90F367ED297AFF8300B10E70 /* FindMyBurgerApp.swift in Sources */,
+				90ABD56129915FB5002FC43A /* ProfileView.swift in Sources */,
 				90ABD55F29910F3F002FC43A /* RestaurantViewModel.swift in Sources */,
 				90ABD54529880B56002FC43A /* Recomendado.swift in Sources */,
 				90ABD54A2988205B002FC43A /* LandingPage.swift in Sources */,
 				90ABD5532990FCC9002FC43A /* Restaurant.swift in Sources */,
+				90ABD56329915FD9002FC43A /* FavoritesBurgerView.swift in Sources */,
 				90F36823297F44CF00B10E70 /* RegisterScreenView.swift in Sources */,
 				90ABD5432987EDD8002FC43A /* Category.swift in Sources */,
 				90ABD54729881024002FC43A /* Recomendado_items_view.swift in Sources */,
